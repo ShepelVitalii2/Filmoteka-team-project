@@ -1,0 +1,246 @@
+:root {
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(https://i.dlpng.com/static/png/111321_preview.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  transition: color 150ms var(--timing-function),
+    background-color 150ms var(--timing-function);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+body.light-theme {
+  background-color: rgb(218, 241, 135);
+  color: #333333;
+}
+
+body.dark-theme {
+  background-color: #333333;
+  color: #fff;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px 24px;
+}
+
+/* THEME SWITCH */
+.theme-switch {
+  display: flex;
+  align-items: center;
+}
+
+.theme-switch__icon {
+  color: currentColor;
+  height: 24px;
+  width: 24px;
+  margin-right: 8px;
+  margin-left: 8px;
+}
+
+.theme-switch__control {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  position: relative;
+  width: 64px;
+  height: 32px;
+  border-radius: 50em;
+  padding: 3px 0;
+}
+
+.theme-switch__toggle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  pointer-events: none;
+}
+
+.theme-switch__track {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: transparent;
+  user-select: none;
+  background-color: #333;
+  border-radius: inherit;
+  z-index: 1;
+}
+
+.theme-switch__marker {
+  position: relative;
+  background-color: #fff;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  z-index: 2;
+  pointer-events: none;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+  transform: translateX(3px);
+  transition: transform 250ms var(--timing-function);
+}
+
+.theme-switch__toggle:checked + .theme-switch__track {
+  background-color: #d3d3d4;
+}
+
+.theme-switch__toggle:checked ~ .theme-switch__marker {
+  transform: translateX(35px);
+}
+
+.theme-switch__toggle:focus + .theme-switch__track,
+.theme-switch__toggle:active + .theme-switch__track {
+  box-shadow: 0 0 0 3px #2196f3;
+}
+
+/* COUNTRIES*/
+
+.title {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 25px;
+  padding: 16px;
+
+  background-color: rgb(201, 186, 243);
+  width: 65%;
+  color: #796e6e;
+
+  font-family: 'Nanum Myeongjo', serif;
+  font-weight: 700;
+  font-size: 48px;
+
+  text-shadow: 2px 2px 20px #726464, 2px 2px 2px #000000;
+}
+
+.form__input {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 360px;
+  height: 50px;
+  text-align: center;
+
+  /* padding: 18px 12px; */
+  /* margin-right: 12px; */
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(202, 191, 191, 0.15);
+  border-radius: 25px;
+
+  background-color: #e3e3e7;
+  /* opacity: 0.6; */
+}
+
+/* COUTRIES*/
+
+.search {
+  display: block;
+  width: 350px;
+  height: 50px;
+  padding: 10px 50px;
+  font-size: 16px;
+  text-align: center;
+
+  border: 2px solid #9aa0a6;
+  border-radius: 25px;
+  background-color: #ffffff;
+  color: rgb(95, 90, 90);
+
+  outline: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  text-align: center;
+
+  color: rgb(95, 83, 83);
+  display: inline-flex;
+
+  margin-top: 50px;
+}
+.card-title {
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: rgb(58, 209, 12);
+}
+.card-text {
+  display: inline-block;
+  text-align: left;
+  list-style: none;
+  margin-right: 30px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.card-text__item {
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(58, 209, 12);
+}
+.card-text__language {
+  font-size: 16px;
+}
+
+//----------------------------------------
+
+.country-name {
+  border-radius: 25px;
+  padding: 16px;
+
+  background-color: rgb(201, 186, 243);
+
+  color: #796e6e;
+
+  font-family: 'Nanum Myeongjo', serif;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.countries-list {
+  display: inline-block;
+  padding: 0px;
+}
+.countries-list__item {
+  display: flex;
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #1a0977;
+  font-weight: 700;
+}
+.countries-list__img {
+  margin-right: 10px;
+}
+
+.js-card-container {
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
