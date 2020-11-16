@@ -1,24 +1,24 @@
 {
-  "name": "js-22",
+  "name": "filmoteka-team-project",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "dev": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /goit-js-hw-12-countries-parcel/",
+    "build": "parcel build src/*.html --public-url /Filmoteka-team-project/",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ShepelVitalii2/goit-js-hw-12-countries-parcel.git"
+    "url": "git+https://github.com/ShepelVitalii2/Filmoteka-team-project.git"
   },
   "keywords": [],
   "author": "Shepel Vitalii <shepelvitalii2@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ShepelVitalii2/goit-js-hw-12-countries-parcel/issues"
+    "url": "https://github.com/ShepelVitalii2/Filmoteka-team-project/issues"
   },
-  "homepage": "https://ShepelVitalii2.github.io/goit-js-hw-12-countries-parcel/",
+  "homepage": "https://ShepelVitalii2.github.io/Filmoteka-team-project/",
   "devDependencies": {
     "@pnotify/core": "^5.1.2",
     "parcel-bundler": "^1.12.4",
