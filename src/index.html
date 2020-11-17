@@ -7,25 +7,27 @@
     <title>Filmoteka</title>
   </head>
 
-<body>
-
-
-  <footer>
-  <p>© 2020 | All Rights Reserved | </p>
-  <p>
-    <span>by GoIT Students</span>
-    <span>by <span style="text-decoration: underline;">GoIT Students</span></span>
-  </p>
-</footer>
-  
-
-
+  <body>
     <include src="./partials/page_header.html"></include>
-    <include src="./partials/page_hero.html"></include>
-    <include src="./partials/page_body.html"></include>
-    <!-- <include src="./partials/page_other"></include> -->
-    <include src="./partials/page_footer.html"></include>
-    <script src="./index.js"></script>
+    <!-- <include src="./partials/page_hero.html"></include> -->
 
-</body>
+    <!--Сюда рендерим то, что сохраняем в my-library-->
+    <include src="./partials/body-home.html"></include>
+
+    <!-- <include src="./partials/page_other"></include> -->
+    <include src="./partials/pagination.html"></include>
+    <include src="./partials/page_footer.html"></include>
+    <footer>
+      <p>© 2020 | All Rights Reserved |</p>
+      <p>
+        <span>by GoIT Students</span>
+        <span
+          >by
+          <span style="text-decoration: underline">GoIT Students</span></span
+        >
+      </p>
+    </footer>
+
+    <script src="./index.js"></script>
+  </body>
 </html>
