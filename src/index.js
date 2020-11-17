@@ -4,6 +4,7 @@ import {
   fetchMovieByKeyWord,
   fetchMovieFullInfo,
 } from './js/apiService';
+import './js/modal';
 
 // fetchTopWeekMovie();
 // fetchMovieByKeyWord();
