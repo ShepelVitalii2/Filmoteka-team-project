@@ -1,6 +1,8 @@
 //Импорты
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
+import modalCardTpl from '../templates/modal-card.hbs'; 
+
 
 
 const filmContainerEl=document.querySelector('.film-container')
@@ -12,8 +14,13 @@ console.log('MODAL')
 
 function onFilmCardClick(e) {
     console.log('CLiCK');
-    basicLightbox.create(`
-		<h1>HTML</h1>
-		<p>HTML inside a lightbox.</p>
-	`).show()
+    if (e.target.nodeName !== 'IMG') {
+    return;
+  }
+
+    const filmCard = modalCardTpl();
+    const instance = basicLightbox.create(filmCard);
+   
+  instance.show();
 }
+
