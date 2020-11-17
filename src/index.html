@@ -1,27 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Filmoteka</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-  
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Filmoteka</title>
+  </head>
 
 <body>
- <h1>HELLO!</h1>
+
+  <!-- шапка сайта -->
+  <header class="page-header">
+    <div class="container">
+      <div class="header-up">
+        <!-- логотип ссылка -->
+        <a href="../src/index.html" class="logo link">
+          Filmoteka
+        </a>
+        <!-- навигация по страницам -->
+        <nav>
+          <ul class="nav-list">
   
-<footer>
+            <li class="nav-item">
+              <a href="../src/index.html" class=" link">
+                HOME
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="./partials/library.html" class="link">
+                MY LIBRARY
+              </a>
+            </li>
+  
+  
+          </ul>
+        </nav>
+  
+  
+      </div>
+      <div class="header-down">
+        <input type="text">
+      </div>
+  
+  
+    </div>
+  
+  </header>
+  <footer>
   <p>© 2020 | All Rights Reserved | </p>
   <p>
     <span>by GoIT Students</span>
     <span>by <span style="text-decoration: underline;">GoIT Students</span></span>
   </p>
 </footer>
-<script src="./index.js"></script>
-</body>
+  
 
+
+
+    <include src="./partials/page_hero.html"></include>
+    <include src="./partials/page_body.html"></include>
+    <!-- <include src="./partials/page_other"></include> -->
+    <include src="./partials/page_footer.html"></include>
+    <script src="./index.js"></script>
+
+</body>
 </html>
