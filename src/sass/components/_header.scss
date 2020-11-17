@@ -1,0 +1,26 @@
+.page-header {
+  background-color: black;
+  height: 230px;
+  width: 1024px;
+}
+
+.container {
+  padding-left: 71px;
+  padding-right: 71px;
+}
+
+.header-up {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 41px;
+  margin-bottom: 37px;
+}
+.nav-list {
+  display: flex;
+}
+
+.header-down {
+  width: 336px;
+  margin-left: auto;
+  margin-right: auto;
+}
