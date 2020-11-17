@@ -1,6 +1,12 @@
 .page-header {
-  background-color: black;
-  height: 230px;
+  background-image: linear-gradient(
+      to right,
+      rgda(0, 0, 0, 0.56),
+      rgda(0, 0, 0, 0.56)
+    ),
+    url(../src/images/home-header-br-img-1024.img);
+  min-height: 230px;
+  background-repeat: no-repeat;
   width: 1024px;
 }
 
