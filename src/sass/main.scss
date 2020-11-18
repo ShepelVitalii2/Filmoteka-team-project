@@ -1,4 +1,6 @@
-
+@import './utils/variables';
+@import './utils/base';
+@import './components/modal';
 @import './components/header';
 @import './components/footer';
 
@@ -10,6 +12,14 @@
 
 body {
   background-color: #e5e5e5;
+}
+
+ul{
+  margin: 0px;
+}
+
+li{
+  list-style: none;
 }
 ////////////////page-header/////////
 .page-header {
@@ -39,4 +49,5 @@ body {
   margin-right: auto;
 }
 ////////////////////////
+
 

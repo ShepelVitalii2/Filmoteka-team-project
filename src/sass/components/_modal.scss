@@ -1,0 +1,149 @@
+.modal-container{
+    display: flex;
+    max-width: 1024px;
+    padding: 71px 60px;
+
+    background-color: #ffffff;
+}
+
+.film-poster{
+    width: 426px;
+    height: 400px;
+
+    background-color: aqua;
+}
+
+.film-info{
+    padding-left: 30px;
+
+    .film-title{
+        margin: 0px 0px 20px 0px;
+
+        font-family: Roboto;
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 1.16;
+        color: #000000;
+    }
+}
+
+.film-ranking{
+    margin-bottom: 20px;
+
+    .item{
+        display: flex;
+        margin-bottom: 10px;            
+    }
+
+    .item:last-child{
+        margin-bottom: 0px;
+    }
+
+    .item-name{
+        width: 152px;
+
+        font-family: Roboto;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 1.33;
+
+        color: #8C8C8C;
+    }
+
+    .item-description{
+        font-family: Roboto;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 1.33;
+
+        color: #000000;
+
+    }
+
+    .item-vote{
+        display: inline-block;
+        text-align: center;
+        width: 36px;
+        height: 16px;
+
+        background: #FF6B01;
+        border-radius: 5px;
+
+        font-family: Roboto;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        color: #FFFFFF;
+    }
+
+    .item-votes{
+        display: inline-block;
+        text-align: center;
+        width: 36px;
+        height: 16px;
+
+        background: #F7F7F7;
+        border-radius: 5px;
+
+        font-family: Roboto;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        color: #000000;
+
+    }
+}   
+
+.film-info .about-item{
+    margin-bottom: 10px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+
+    color: #000000;
+}
+
+.film-info .description {
+    width: 426px;
+    margin-bottom: 20px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.67;
+
+    color: #000000;
+}
+
+.btn-add{
+    min-width: 136px;
+    height: 44px;
+
+    border-radius: 5px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+
+
+    &.watched{
+        margin-right: 15px;
+        background: #FF6B01;
+        color: #FFFFFF;
+    }
+
+    &.queue{
+        border: 1px solid #000000;
+        box-sizing: border-box;
+    }
+}
