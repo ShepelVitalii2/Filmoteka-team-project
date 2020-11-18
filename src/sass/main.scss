@@ -5,48 +5,48 @@
 @import './components/footer';
 @import './components/spin';
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+// *,
+// *::before,
+// *::after {
+//   box-sizing: border-box;
+// }
 
-body {
-  background-color: #e5e5e5;
-}
+// body {
+//   background-color: #e5e5e5;
+// }
 
-ul {
-  margin: 0px;
-}
+// ul {
+//   margin: 0px;
+// }
 
-li {
-  list-style: none;
-}
+// li {
+//   list-style: none;
+// }
 ////////////////page-header/////////
-.page-header {
-  background-color: black;
-  height: 230px;
-  width: 1024px;
-}
+// .page-header {
+//   background-color: black;
+//   height: 230px;
+//   width: 1024px;
+// }
 
-.container {
-  padding-left: 71px;
-  padding-right: 71px;
-}
+// .container {
+//   padding-left: 71px;
+//   padding-right: 71px;
+// }
 
-.header-up {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 41px;
-  margin-bottom: 37px;
-}
-.nav-list {
-  display: flex;
-}
+// .header-up {
+//   display: flex;
+//   justify-content: space-between;
+//   padding-top: 41px;
+//   margin-bottom: 37px;
+// }
+// .nav-list {
+//   display: flex;
+// }
 
-.header-down {
-  width: 336px;
-  margin-left: auto;
-  margin-right: auto;
-}
+// .header-down {
+//   width: 336px;
+//   margin-left: auto;
+//   margin-right: auto;
+// }
 ////////////////////////
