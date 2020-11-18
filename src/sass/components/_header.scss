@@ -1,20 +1,20 @@
-// .page-header {
-//   background-image: linear-gradient(
-//       to right,
-//       rgda(0, 0, 0, 0.56),
-//       rgda(0, 0, 0, 0.56)
-//     ),
-//     url('../images/home-header-br-img-1024.jpg');
-//   min-height: 230px;
-//   background-repeat: no-repeat;
+.page-header {
+  background-image: linear-gradient(
+      to right,
+      rgda(0, 0, 0, 0.56),
+      rgda(0, 0, 0, 0.56)
+    ),
+    url('../images/home-header-br-img-1024.jpg');
+  min-height: 230px;
+  background-repeat: no-repeat;
 
-//   width: 1024px;
-// }
-
-.container {
-  padding-left: 71px;
-  padding-right: 71px;
+  width: 1024px;
 }
+
+// .container {
+//   padding-left: 71px;
+//   padding-right: 71px;
+// }
 
 .header-up {
   display: flex;

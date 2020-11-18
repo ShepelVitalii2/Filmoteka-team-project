@@ -9,9 +9,9 @@ import {
 import './js/modal';
 import './js/spinner';
 
-// fetchTopWeekMovie();
-// fetchMovieByKeyWord();
-// fetchMovieFullInfo(2);
+fetchTopWeekMovie();
+fetchMovieByKeyWord();
+fetchMovieFullInfo(2);
 
 // startSpinner();
 // stopSpinner();
