@@ -1,21 +1,17 @@
-
-@import './components/header';
-@import './components/footer';
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body {
-  background-color: #e5e5e5;
-}
-////////////////page-header/////////
 .page-header {
-  background-color: black;
-  height: 230px;
+  background-image: linear-gradient(
+      to right,
+      rgda(0, 0, 0, 0.56),
+      rgda(0, 0, 0, 0.56)
+    ),
+    url(../src/images/home-header-br-img-1024.img);
+  min-height: 230px;
+  background-repeat: no-repeat;
+<<<<<<< Updated upstream
   width: 1024px;
+=======
+  //   width: 1024px;
+>>>>>>> Stashed changes
 }
 
 .container {
@@ -38,5 +34,3 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-////////////////////////
-
