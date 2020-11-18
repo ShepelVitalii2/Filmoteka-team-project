@@ -7,25 +7,54 @@
     <title>Filmoteka</title>
   </head>
 
-<body>
+  <body>
+    <!-- шапка сайта -->
+    <header class="page-header">
+      <div class="container">
+        <div class="header-up">
+          <!-- логотип ссылка -->
+          <a href="../src/index.html" class="logo link"> Filmoteka </a>
+          <!-- навигация по страницам -->
+          <nav>
+            <ul class="nav-list">
+              <li class="nav-item">
+                <a href="../src/index.html" class="link"> HOME </a>
+              </li>
+              <li class="nav-item">
+                <a href="./partials/library.html" class="link"> MY LIBRARY </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="header-down">
+          <input type="text" />
+        </div>
+      </div>
+    </header>
+    <footer>
+      <p>© 2020 | All Rights Reserved |</p>
+      <p>
+        <span>by GoIT Students</span>
+        <span
+          >by
+          <span style="text-decoration: underline">GoIT Students</span></span
+        >
+      </p>
+    </footer>
 
-
-  <footer>
-  <p>© 2020 | All Rights Reserved | </p>
-  <p>
-    <span>by GoIT Students</span>
-    <span>by <span style="text-decoration: underline;">GoIT Students</span></span>
-  </p>
-</footer>
-  
-
-
-    <include src="./partials/page_header.html"></include>
     <include src="./partials/page_hero.html"></include>
     <include src="./partials/page_body.html"></include>
-    <!-- <include src="./partials/page_other"></include> -->
-    <include src="./partials/page_footer.html"></include>
-    <script src="./index.js"></script>
 
-</body>
+    <include src="./partials/page_header.html"></include>
+    <!-- <include src="./partials/page_hero.html"></include> -->
+
+    <!--Сюда рендерим то, что сохраняем в my-library-->
+    <include src="./partials/body-home.html"></include>
+
+    <!-- <include src="./partials/page_other"></include> -->
+    <include src="./partials/pagination.html"></include>
+    <include src="./partials/page_footer.html"></include>
+
+    <script src="./index.js"></script>
+  </body>
 </html>
