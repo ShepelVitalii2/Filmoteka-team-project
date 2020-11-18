@@ -24,6 +24,8 @@
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-handlebars-precompile": "^1.0.2",
     "parcel-plugin-nuke-dist": "^1.0.1",
+    "posthtml": "^0.14.0",
+    "posthtml-include": "^1.6.0",
     "sass": "^1.29.0"
   },
   "dependencies": {
@@ -31,7 +33,7 @@
     "gh-pages": "^3.1.0",
     "lodash.debounce": "^4.0.8",
     "pnotify": "^5.1.2",
-    "posthtml-include": "^1.6.0"
+    "tui-pagination": "^3.4.0"
   },
   "description": ""
 }
