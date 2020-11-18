@@ -6,8 +6,9 @@ import {
   fetchMovieFullInfo,
 } from './js/apiService';
 
-import './js/modal';
-import './js/spinner';
+// import './js/modal';
+// import './js/spinner';
+import './js/popularFilmsLoad';
 
 fetchTopWeekMovie();
 fetchMovieByKeyWord();
