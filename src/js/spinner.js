@@ -1,6 +1,6 @@
 import { Spinner } from 'spin.js';
 
-var opts = {
+const opts = {
   lines: 13, // The number of lines to draw
   length: 38, // The length of each line
   width: 17, // The line thickness
@@ -21,7 +21,11 @@ var opts = {
   position: 'absolute', // Element positioning
 };
 
-var target = document.getElementById('spinner');
-var spinner = new Spinner(opts).spin(target);
+const target = document.getElementById('spinner');
 
-// export { spinner };
+export function startSpinner() {
+  const spinner = new Spinner(opts).spin(target);
+}
+export function stopSpinner() {
+  stop();
+}
