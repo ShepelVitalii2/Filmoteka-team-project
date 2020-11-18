@@ -8,6 +8,8 @@ import {
 
 import './js/modal';
 import './js/spinner';
+import listFilmTempls from './templates/list-seach-film.hbs';
+const debounce = require('lodash.debounce');
 
 fetchTopWeekMovie();
 fetchMovieByKeyWord();
