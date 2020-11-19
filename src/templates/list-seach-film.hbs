@@ -1,7 +1,11 @@
-<ul>
-    {{#each this}}
-    <li>
-        <img src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="">
-    </li>
-    {{/each}}
-</ul>
+{{#each this}}
+<li>
+    <img src=https://image.tmdb.org/t/p/w500{{poster_path}} alt="">
+    <p>{{title}}</p>
+    <ul class="list-genre">{{#each genre_ids}}
+        <li>{{this}}</li>
+        {{/each}}
+    </ul>
+    <p>{{release_date}}</p>
+</li>
+{{/each}}
