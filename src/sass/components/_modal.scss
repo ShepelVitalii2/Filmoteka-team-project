@@ -78,16 +78,16 @@
 .film-ranking {
     margin-bottom: 20px;
 
-    .item {
+    & .item-rank {
         display: flex;
         margin-bottom: 10px;
     }
 
-    .item:last-child {
+    & .item-rank:last-child {
         margin-bottom: 0px;
     }
 
-    .item-name {
+    & .item-name {
         width: 152px;
 
         font-weight: 500;
@@ -102,7 +102,7 @@
 
     }
 
-    .item-description {
+    & .item-description {
         font-weight: 500;
         font-size: 12px;
         line-height: 1.33;
@@ -111,7 +111,7 @@
 
     }
 
-    .item-vote {
+    & .item-vote {
         display: inline-block;
         text-align: center;
         width: 36px;
@@ -126,7 +126,7 @@
         color: #FFFFFF;
     }
 
-    .item-votes {
+    & .item-votes {
         display: inline-block;
         text-align: center;
         width: 36px;
