@@ -42,3 +42,19 @@
     opacity: 1;
   }
 }
+
+.loadspin-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  pointer-events: none;
+
+  &.is-open {
+    opacity: 1;
+    pointer-events: initial;
+  }
+}

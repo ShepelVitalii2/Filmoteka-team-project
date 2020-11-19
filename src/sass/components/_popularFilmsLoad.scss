@@ -1,0 +1,12 @@
+.popular-films {
+  &.is-open {
+    opacity: 1;
+    pointer-events: initial;
+  }
+}
+
+.popular-contnent {
+  &.is-open {
+    transform: scale(1);
+  }
+}
