@@ -7,9 +7,9 @@ export default class ApiService {
     this.page = 1;
   }
 
-  fetchMovie() {
+  fetchMovie(url) {
     return fetch(
-      `${BASE_URL}/trending/movie/week?api_key=${API_KEY}&page=${this.page}`,
+      `${BASE_URL}${url}?api_key=${API_KEY}&page=${this.page}&query=${this.searchQuery}`,
     )
       .then(r => r.json())
       .then(({ results }) => {
@@ -32,7 +32,32 @@ export default class ApiService {
   set query(newQuery) {
     return (this.searchQuery = newQuery);
   }
+
+  resultFetchFilms(url) {
+    return this.fetchMovie(url).then(d => {
+      return d.map(el => ({
+        ...el,
+        release_date: el.release_date.split('-')[0],
+        vote_average: el.vote_average.toFixed(1),
+      }));
+    });
+  }
 }
+
+//в разработке
+//   getFilmsById(url) {
+//     return this.fetchMovie(url).then(d => {
+//       return this.fetchFilmById().then(arr =>
+//         d.map(el => ({
+//           ...el,
+//           filmId: el.filmId.flatMap(num => arr.filter(el => el.id === num)),
+//         })),
+//       );
+//     });
+//   }
+// }
+
+//////////////////////////////////////////////////////////////////////////////
 
 // function fetchTopWeekMovie() {
 //   return fetch(`${BASE_URL}/trending/movie/week?api_key=${API_KEY}`)
