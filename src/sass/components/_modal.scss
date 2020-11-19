@@ -1,132 +1,182 @@
-.modal-container{
+.modal-container {
     display: flex;
-    max-width: 1024px;
-    padding: 71px 60px;
 
     background-color: #ffffff;
+
+    @media screen and (min-width: $desktop) {
+        width: $desktop;
+        padding: 60px 71px;
+    }
+
+    @media screen and (min-width: $tablet) and (max-width: $desktop - 1) {
+        width: $tablet;
+        padding: 60px 75px;
+    }
+
+    @media screen and (max-width: $tablet - 1) {
+        display: block;
+        width: $mobile;
+        padding: 20px 20px 40px 20px;
+    }
 }
 
-.film-poster{
-    width: 426px;
-    height: 400px;
+.film-poster {
+    @media screen and (min-width: $desktop) {
+        width: 426px;
+        height: 400px;
+    }
+
+    @media screen and (min-width: $tablet) and (max-width: $desktop - 1) {
+        width: 294px;
+        height: 400px;
+
+    }
+
+    @media screen and (max-width: $tablet - 1) {
+        width: 280px;
+        height: 416px;
+
+    }
 
     background-color: aqua;
 }
 
-.film-info{
-    padding-left: 30px;
+.film-info {
+    margin-left: 30px;
 
-    .film-title{
-        margin: 0px 0px 20px 0px;
+    @media screen and (min-width: $desktop) {
+        width: 426px;
+    }
 
-        font-family: Roboto;
+    @media screen and (min-width: $tablet) and (max-width: $desktop - 1) {
+        width: 294px;
+    }
+
+    @media screen and (max-width: $tablet - 1) {
+        width: 280px;
+        margin-left: 0px;
+
+    }
+
+    .film-title {
+        margin-bottom: 20px;
+
         font-weight: 500;
         font-size: 30px;
         line-height: 1.16;
-        color: #000000;
+        color: $primary-text-color;
+
+        @media screen and (max-width: $tablet - 1) {
+            margin-top: 30px;
+
+            font-size: 20px;
+            line-height: 1.15;
+        }
     }
 }
 
-.film-ranking{
+.film-ranking {
     margin-bottom: 20px;
 
-    .item{
+    .item {
         display: flex;
-        margin-bottom: 10px;            
+        margin-bottom: 10px;
     }
 
-    .item:last-child{
+    .item:last-child {
         margin-bottom: 0px;
     }
 
-    .item-name{
+    .item-name {
         width: 152px;
 
-        font-family: Roboto;
         font-weight: 500;
         font-size: 12px;
         line-height: 1.33;
 
-        color: #8C8C8C;
+        color: $grey-text-color-modal;
+
+        @media screen and (max-width: $desktop - 1) {
+            width: 108px;
+        }
+
     }
 
-    .item-description{
-        font-family: Roboto;
+    .item-description {
         font-weight: 500;
         font-size: 12px;
         line-height: 1.33;
 
-        color: #000000;
+        color: $primary-text-color;
 
     }
 
-    .item-vote{
+    .item-vote {
         display: inline-block;
         text-align: center;
         width: 36px;
         height: 16px;
 
-        background: #FF6B01;
+        background: $accent-color;
         border-radius: 5px;
 
-        font-family: Roboto;
         font-weight: 500;
         font-size: 12px;
-        line-height: 14px;
+        line-height: 1.20;
         color: #FFFFFF;
     }
 
-    .item-votes{
+    .item-votes {
         display: inline-block;
         text-align: center;
         width: 36px;
         height: 16px;
 
-        background: #F7F7F7;
+        background: $white-color;
         border-radius: 5px;
 
-        font-family: Roboto;
-        font-weight: 500;
         font-size: 12px;
-        line-height: 14px;
-        color: #000000;
+        line-height: 1.20;
+        color: $primary-text-color;
 
     }
-}   
+}
 
-.film-info .about-item{
+.film-info .about-item {
     margin-bottom: 10px;
 
-    font-family: Roboto;
-    font-style: normal;
     font-weight: 500;
     font-size: 12px;
     line-height: 1.33;
 
-    color: #000000;
+    color: $primary-text-color;
 }
 
 .film-info .description {
-    width: 426px;
     margin-bottom: 20px;
 
-    font-family: Roboto;
-    font-style: normal;
     font-weight: 500;
     font-size: 12px;
     line-height: 1.67;
 
-    color: #000000;
+    color: $primary-text-color;
+
+    @media screen and (max-width: $tablet - 1) {
+        margin-bottom: 40px;
+
+
+    }
+
 }
 
-.btn-add{
-    min-width: 136px;
+.btn-add {
+    width: 136px;
     height: 44px;
+    padding: 0px;
 
+    border: 0px;
     border-radius: 5px;
-
-    font-family: Roboto;
-    font-style: normal;
+    font-family: 'Roboto';
     font-weight: 500;
     font-size: 12px;
     line-height: 1.33;
@@ -136,14 +186,19 @@
     text-transform: uppercase;
 
 
-    &.watched{
+    &.watched {
         margin-right: 15px;
-        background: #FF6B01;
+        background: $accent-color;
         color: #FFFFFF;
+
+        @media screen and (max-width: $tablet - 1) {
+            margin-right: 0px;
+        }
+
     }
 
-    &.queue{
-        border: 1px solid #000000;
+    &.queue {
+        border: 1px solid $primary-text-color;
         box-sizing: border-box;
     }
 }
