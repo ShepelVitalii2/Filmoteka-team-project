@@ -1,10 +1,11 @@
 import './sass/main.scss';
-import { startSpinner, stopSpinner } from './js/spinner';
-import {
-  fetchTopWeekMovie,
-  fetchMovieByKeyWord,
-  fetchMovieFullInfo,
-} from './js/apiService';
+
+// import { startSpinner, stopSpinner } from './js/spinner';
+// import {
+//   fetchTopWeekMovie,
+//   fetchMovieByKeyWord,
+//   fetchMovieFullInfo,
+// } from './js/apiService';
 
 import './js/popularFilmsLoad';
 
@@ -16,3 +17,4 @@ const debounce = require('lodash.debounce');
 // fetchTopWeekMovie();
 // fetchMovieByKeyWord();
 // fetchMovieFullInfo(2);
+
