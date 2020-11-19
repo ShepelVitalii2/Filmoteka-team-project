@@ -6,9 +6,6 @@ import {
   fetchMovieFullInfo,
 } from './js/apiService';
 
-
-// import './js/modal';
-// import './js/spinner';
 import './js/popularFilmsLoad';
 
 import './js/modal';
@@ -16,10 +13,6 @@ import './js/spinner';
 import listFilmTempls from './templates/list-seach-film.hbs';
 const debounce = require('lodash.debounce');
 
-
-fetchTopWeekMovie();
-fetchMovieByKeyWord();
-fetchMovieFullInfo(2);
-
-// startSpinner();
-// stopSpinner();
+// fetchTopWeekMovie();
+// fetchMovieByKeyWord();
+// fetchMovieFullInfo(2);

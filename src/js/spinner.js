@@ -23,9 +23,13 @@ const opts = {
 
 const target = document.getElementById('spinner');
 
-export function startSpinner() {
-  const spinner = new Spinner(opts).spin(target);
+export default function loadingSpinner() {
+  document.querySelector('.loadspin-overlay').classList.toggle('is-open');
 }
-export function stopSpinner() {
-  stop();
-}
+
+// export function startSpinner() {
+//   const spinner = new Spinner(opts).spin(target);
+// }
+// export function stopSpinner() {
+//   stop();
+// }
