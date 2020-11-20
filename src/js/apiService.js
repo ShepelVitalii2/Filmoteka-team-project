@@ -9,7 +9,7 @@ export default class ApiService {
 
   fetchFilms(url) {
     return fetch(
-      `${BASE_URL}${url}?api_key=${API_KEY}&page=${this.page}&query=${this.searchQuery}`,
+      `${this.BASE_URL}${url}?api_key=${this.API_KEY}&page=${this.page}&query=${this.searchQuery}`,
     )
       .then(response => response.json())
       .then(({ results }) => {
@@ -68,6 +68,15 @@ export default class ApiService {
     return fetch(`${BASE_URL}movie/${id}?api_key=${API_KEY}`).then(response =>
       response.json(),
     );
+  }
+
+  fetchTopWeekMovie() {
+    return fetch(`${BASE_URL}/trending/movie/week?api_key=${API_KEY}`);
+    // .then(result => result.json())
+    // .then(({ results }) => {
+    //   //console.log(results);
+    //   return results;
+    // });
   }
 }
 
