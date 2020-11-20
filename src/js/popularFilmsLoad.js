@@ -1,26 +1,24 @@
-// import {
-//   fetchTopWeekMovie,
-//   fetchMovieByKeyWord,
-//   fetchMovieFullInfo,
-// } from './apiService';
+// import filmsTpl from '../templates/movies.hbs';
 import ApiService from './apiService';
 import loadingSpinner from './spinner';
 
 const refs = {
-  //Сюда поставить контейнер для фильмов
-  filmContainer: document.querySelector('js-film-container'),
+  filmContainer: document.querySelector('.js-film-container'),
 };
 const filmsApiService = new ApiService();
 
-function markupFilms(films) {
-  //вместо решетки карточку фильмов
-  refs.filmContainer.insertAdjacentHTML('beforeend', filmContainerTest(films));
+export default function markupFilms(films) {
+  // refs.filmContainer.insertAdjacentHTML('beforeend', filmsTpl(films));
 }
 
 function showBestFilms(url) {
-  loadingSpinner();
-  return filmsApiService(url).then(markupFilms).then(loadingSpinner);
+  // loadingSpinner();
+  return filmsApiService
+    .resultFetchFilms(url)
+    .then(markupFilms)
+    .then(loadingSpinner);
 }
+filmsApiService.fetchFilms('trending/movie/day');
 
 showBestFilms('trending/movie/day');
 
@@ -28,8 +26,6 @@ showBestFilms('trending/movie/day');
 
 // function checkClick(evt) {
 //   if (evt.target.tagName === 'IMG') {
-//     startPopup(evt.target.dataset.id);
+//     startTest(evt.target.dataset.id);
 //   }
 // }
-
-// filmsApiService.fetchMovie();
