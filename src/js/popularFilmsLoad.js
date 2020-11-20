@@ -4,33 +4,19 @@ import ApiService from './apiService';
 // import loadingSpinner from './spinner';
 import movieItemTpl from '../templates/movieItemTpl';
 
-
-
 const refs = {
-
-//   popfilmsContainer: document.querySelector('.container-item'),
   filmContainer: document.querySelector('.js-film-container'),
-
 };
 
-// function markupFilms(films) {
-//   refs.popfilmsContainer.insertAdjacentHTML('beforeend', movieItemTpl(films));
-// }
+const filmsApiService = new ApiService();
 
 export default function markupFilms(films) {
-
   refs.filmContainer.insertAdjacentHTML('beforeend', topWeekMovie(films));
-
-
-
 }
 
 function showBestFilms(url) {
   // loadingSpinner();
-  return filmsApiService
-    .resultFetchFilms(url)
-    .then(markupFilms)
-    .then(loadingSpinner);
+  return filmsApiService.resultFetchFilms(url).then(markupFilms);
 }
 
 showBestFilms('trending/movie/day');

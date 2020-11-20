@@ -9,7 +9,7 @@ export default class ApiService {
 
   fetchFilms(url) {
     return fetch(
-      `${this.BASE_URL}${url}?api_key=${this.API_KEY}&page=${this.page}&query=${this.searchQuery}`,
+      `${BASE_URL}${url}?api_key=${API_KEY}&page=${this.page}&query=${this.searchQuery}`,
     )
       .then(response => response.json())
       .then(({ results }) => {
