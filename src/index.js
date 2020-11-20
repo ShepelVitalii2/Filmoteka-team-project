@@ -9,12 +9,17 @@ import './sass/main.scss';
 
 import './js/popularFilmsLoad';
 
-import './js/modal';
+import './js/seach-film';
+//import './js/modal';
+
+
+import { onOpenModal } from './js/modal';
+
 import './js/spinner';
-import listFilmTempls from './templates/list-seach-film.hbs';
-const debounce = require('lodash.debounce');
 
 // fetchTopWeekMovie();
 // fetchMovieByKeyWord();
 // fetchMovieFullInfo(2);
 
+// // Разобраться почему подтягиваются информация о фильме в шаблон???
+// onOpenModal(fetchMovieFullInfo(3));
