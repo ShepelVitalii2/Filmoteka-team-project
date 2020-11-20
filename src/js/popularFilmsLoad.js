@@ -1,4 +1,4 @@
-// import filmsTpl from '../templates/movies.hbs';
+import topWeekMovie from '../templates/movieItemTpl.hbs';
 import ApiService from './apiService';
 //import * as ApiService from './apiService';
 // import loadingSpinner from './spinner';
@@ -18,7 +18,11 @@ const refs = {
 // }
 
 export default function markupFilms(films) {
-  refs.filmContainer.insertAdjacentHTML('beforeend', movieItemTpl(films));
+
+  refs.filmContainer.insertAdjacentHTML('beforeend', topWeekMovie(films));
+
+
+
 }
 
 function showBestFilms(url) {
