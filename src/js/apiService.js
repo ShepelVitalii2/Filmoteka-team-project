@@ -9,7 +9,7 @@ export default class ApiService {
 
   fetchMovie(url) {
     return fetch(
-      `${BASE_URL}${url}?api_key=${API_KEY}&page=${this.page}&query=${this.searchQuery}`,
+      `${this.BASE_URL}${url}?api_key=${this.API_KEY}&page=${this.page}&query=${this.searchQuery}`,
     )
       .then(r => r.json())
       .then(({ results }) => {
@@ -41,6 +41,15 @@ export default class ApiService {
         vote_average: el.vote_average.toFixed(1),
       }));
     });
+  }
+
+  fetchTopWeekMovie() {
+    return fetch(`${BASE_URL}/trending/movie/week?api_key=${API_KEY}`);
+    // .then(result => result.json())
+    // .then(({ results }) => {
+    //   //console.log(results);
+    //   return results;
+    // });
   }
 }
 
