@@ -1,24 +1,24 @@
-import Pagination from 'tui-pagination';
-import 'tui-pagination/dist/tui-pagination.css';
-import markupPopularMovies from './';
+console.log('123');
+
+// import Pagination from 'tui-pagination';
+// import 'tui-pagination/dist/tui-pagination.css';
+import markupFilms from './popularFilmsLoad';
 
 const API_KEY = '3f80d4cf4eb52d6e9d2ef400ea3d2acb';
-const BASE_URL = 'https://api.themoviedb.org/3';
+const BASE_URL = 'https://api.themoviedb.org/3/';
 
 const refs = {
-  filmContainer: document.querySelector('js-film-container'),
+  filmContainer: document.querySelector('.js-film-container'),
 };
 
 let pageMarkup = '';
 let currentPage = 0;
-const paginationEl = document.querySelector('#pagination');
+const paginationEl = document.querySelector('.pagination');
 
 // const pagination = new Pagination('pagination');
 
 // const container = document.getElementById('pagination');
 // const pagination = new Pagination(container);
-
-paginationEl.addEventListener('click', onBtnClick);
 
 fetchPage(currentPage + 1)
   .then(r => r.json())
@@ -26,10 +26,25 @@ fetchPage(currentPage + 1)
     paginationMarkup(total_pages);
   });
 
+paginationEl.addEventListener('click', onBtnClick);
+
+//запрос на страницу
+function fetchPage(page) {
+  return fetch(`${BASE_URL}trending/movie/day?api_key=${API_KEY}&page=${page}`);
+}
+
+//делаем разметку
+function paginationMarkup(length) {
+  renderMarkup(length);
+  paginationEl.insertAdjacentHTML('beforeend', pageMarkup);
+}
+
 //Активация перехода по кнопке.
 function onBtnClick(event) {
   const paginationBtnList = document.querySelectorAll('button.btn-number');
-  const lastPage = Number(paginationBtnList[paginationBtnList - 1].textContent);
+  const lastPage = Number(
+    paginationBtnList[paginationBtnList.length - 1].textContent,
+  );
 
   //Если цифра присутствует, прыгаем на нее
   if (Number(event.target.textContent)) {
@@ -49,11 +64,11 @@ function onBtnClick(event) {
   clearMarkup();
   clearFilmContainer();
 
-  fetching(currentPage + 1)
+  fetchPage(currentPage + 1)
     .then(r => r.json())
     .then(({ total_pages, results }) => {
-      renderPagMarkup(total_pages);
-      markupPopularMovies(results);
+      paginationMarkup(total_pages);
+      markupFilms(results);
     })
     .then(
       setTimeout(() => {
@@ -62,19 +77,8 @@ function onBtnClick(event) {
     );
 }
 
-//очищаем разметку и контейнер
-
-//запрос на страницу
-function fetchPage(page) {
-  return fetch(
-    `${BASE_URL}/trending/movie/day?api_key=${API_KEY}&page=${page}`,
-  );
-}
-
-//делаем разметку
-function paginationMarkup(length) {
-  renderMarkup(length);
-  paginationEl.insertAdjacentElement('beforeend', pageMarkup);
+function onNumberBtnClick(event) {
+  currentPage = Number(event.target.textContent) - 1;
 }
 
 //опции библиотеки туи, пока опционально
@@ -179,4 +183,32 @@ function clearFilmContainer() {
   refs.filmContainer.innerHTML = '';
 }
 
+function setActiveBtn(event) {
+  const numberBtnsEl = document.querySelectorAll('button.button-number');
+  const btnsArray = [...numberBtnsEl];
+
+  if (currentPage === 0) {
+    numberBtnsEl[0].classList.add('active-pagination');
+  } else {
+    let targetBtnValue = 0;
+
+    if (event.target.textContent === '→' || event.target.textContent === '←') {
+      targetBtnValue = currentPage + 1;
+    } else {
+      targetBtnValue = Number(event.target.textContent);
+    }
+
+    btnsArray.find((btn, index) => {
+      if (btn.classList.contains('active-pagination')) {
+        numberBtnsEl[index].classList.remove('active-pagination');
+      }
+    });
+
+    btnsArray.find((btn, index) => {
+      if (Number(btn.textContent) === targetBtnValue) {
+        numberBtnsEl[index].classList.add('active-pagination');
+      }
+    });
+  }
+}
 // const pagination = new Pagination('pagination', options);
