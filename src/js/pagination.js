@@ -5,8 +5,12 @@ import markupPopularMovies from './';
 const API_KEY = '3f80d4cf4eb52d6e9d2ef400ea3d2acb';
 const BASE_URL = 'https://api.themoviedb.org/3';
 
-let pageMarkup = '';
+const refs = {
+  filmContainer: document.querySelector('js-film-container'),
+};
 
+let pageMarkup = '';
+let currentPage = 0;
 const paginationEl = document.querySelector('#pagination');
 
 // const pagination = new Pagination('pagination');
@@ -15,6 +19,12 @@ const paginationEl = document.querySelector('#pagination');
 // const pagination = new Pagination(container);
 
 paginationEl.addEventListener('click', onBtnClick);
+
+fetchPage(currentPage + 1)
+  .then(r => r.json())
+  .then(({ total_pages }) => {
+    paginationMarkup(total_pages);
+  });
 
 //Активация перехода по кнопке.
 function onBtnClick(event) {
@@ -26,19 +36,33 @@ function onBtnClick(event) {
     onNumberBtnClick(event);
   }
   //если стрелка влево, возвращаем страницу -1
-  else if (event.target.textContent === '#' && currentPage < lastPage - 1) {
+  else if (event.target.textContent === '→' && currentPage < lastPage - 1) {
     onRightBtnClick();
   }
   //если стрелка вправо, возвращаем страницу +1
-  else if (event.target.textContent === '#' && currentPage > 0) {
+  else if (event.target.textContent === '←' && currentPage > 0) {
     onLeftBtnClick();
   } else {
     return;
   }
-  //и очищаем разметку и контейнер
+
   clearMarkup();
-  clearContainer();
+  clearFilmContainer();
+
+  fetching(currentPage + 1)
+    .then(r => r.json())
+    .then(({ total_pages, results }) => {
+      renderPagMarkup(total_pages);
+      markupPopularMovies(results);
+    })
+    .then(
+      setTimeout(() => {
+        setActiveBtn(event);
+      }, 500),
+    );
 }
+
+//очищаем разметку и контейнер
 
 //запрос на страницу
 function fetchPage(page) {
@@ -149,6 +173,10 @@ function onRightBtnClick() {
 
 function onLeftBtnClick() {
   currentPage -= 1;
+}
+
+function clearFilmContainer() {
+  refs.filmContainer.innerHTML = '';
 }
 
 // const pagination = new Pagination('pagination', options);

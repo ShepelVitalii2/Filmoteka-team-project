@@ -78,16 +78,16 @@
 .film-ranking {
     margin-bottom: 20px;
 
-    .item {
+    & .item-rank {
         display: flex;
         margin-bottom: 10px;
     }
 
-    .item:last-child {
+    & .item-rank:last-child {
         margin-bottom: 0px;
     }
 
-    .item-name {
+    & .item-name {
         width: 152px;
 
         font-weight: 500;
@@ -102,7 +102,7 @@
 
     }
 
-    .item-description {
+    & .item-description {
         font-weight: 500;
         font-size: 12px;
         line-height: 1.33;
@@ -111,7 +111,7 @@
 
     }
 
-    .item-vote {
+    & .item-vote {
         display: inline-block;
         text-align: center;
         width: 36px;
@@ -126,7 +126,7 @@
         color: #FFFFFF;
     }
 
-    .item-votes {
+    & .item-votes {
         display: inline-block;
         text-align: center;
         width: 36px;
@@ -201,4 +201,42 @@
         border: 1px solid $primary-text-color;
         box-sizing: border-box;
     }
+}
+
+
+///////////////////Модальное окно руками
+body.show-modal .backdrop {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: initial;
+}
+
+body.show-modal .modal {
+    transform: scale(1);
+}
+
+.backdrop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 999;
+
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
+}
+
+.modal {
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+        0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+
+    transform: scale(1.1);
+    transition: transform 200ms ease-in-out;
 }
