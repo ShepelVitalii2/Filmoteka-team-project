@@ -1,14 +1,28 @@
 import topWeekMovie from '../templates/movieItemTpl.hbs';
 import ApiService from './apiService';
-import loadingSpinner from './spinner';
+//import * as ApiService from './apiService';
+// import loadingSpinner from './spinner';
+import movieItemTpl from '../templates/movieItemTpl';
+
+
 
 const refs = {
+
+//   popfilmsContainer: document.querySelector('.container-item'),
   filmContainer: document.querySelector('.js-film-container'),
+
 };
-const filmsApiService = new ApiService();
+
+// function markupFilms(films) {
+//   refs.popfilmsContainer.insertAdjacentHTML('beforeend', movieItemTpl(films));
+// }
 
 export default function markupFilms(films) {
+
   refs.filmContainer.insertAdjacentHTML('beforeend', topWeekMovie(films));
+
+
+
 }
 
 function showBestFilms(url) {
@@ -18,7 +32,6 @@ function showBestFilms(url) {
     .then(markupFilms)
     .then(loadingSpinner);
 }
-filmsApiService.fetchFilms('trending/movie/day');
 
 showBestFilms('trending/movie/day');
 
