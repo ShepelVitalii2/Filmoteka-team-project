@@ -23,9 +23,9 @@ const opts = {
 
 const target = document.getElementById('spinner');
 
-export default function loadingSpinner() {
-  document.querySelector('.loadspin-overlay').classList.toggle('is-open');
-}
+// export default function loadingSpinner() {
+//   document.querySelector('.loadspin-overlay').classList.toggle('is-open');
+// }
 
 // export function startSpinner() {
 //   const spinner = new Spinner(opts).spin(target);
