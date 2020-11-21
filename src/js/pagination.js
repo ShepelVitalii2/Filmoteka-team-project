@@ -130,14 +130,15 @@ function renderMarkupForDesk(length) {
       const pageItem = `<li class="pagination-item"><button class="btn-number">${i}</button></li>`;
       pageMarkup += pageItem;
     }
-    pageMarkup += `<li class="pagination-item"><button class="#">...</button></li>
-  <li class="pagination-item"><button class="btn-number-last">${length}</button></li>
-  <li class="pagination-item"><button class="#">&#8594</button></li>`;
+    pageMarkup += `<li class="pagination-item"><button class="btn-number">...</button></li>
+  <li class="pagination-item"><button class="btn-number-last btn-number">${length}</button></li>
+  <li class="pagination-item"><button class="right">&#8594</button></li>`;
   }
   //если разметка больше 5 и до последнего элемента остается 3 стр
   else if (currentPage + 1 >= 5 && currentPage + 1 < length - 3) {
-    pageMarkup = `<li class="pagination-item"><button class="btn-number">1</button></li>
-    <li class='pagination-item'><button class="#">...</button></li>
+    pageMarkup = `<li class="pagination-item"><button class="left">&#8592</button></li>
+    <li class="pagination-item"><button class="btn-number">1</button></li>
+    <li class='pagination-item'><button class="btn-number">...</button></li>
     <li class='pagination-item'><button class="btn-number">${
       currentPage - 1
     }</button></li>
@@ -151,15 +152,15 @@ function renderMarkupForDesk(length) {
     <li class='pagination-item'><button class="btn-number">${
       currentPage + 3
     }</button></li>
-    <li class='pagination-item'><button class="#">...</button></li>
-    <li class="pagination-item"><button class="btn-number-last">${length}</button></li>
+    <li class='pagination-item'><button class="btn-number">...</button></li>
+    <li class="pagination-item"><button class="btn-number-last btn-number">${length}</button></li>
     <li class="pagination-item"><button class="right">&#8594</button></li>`;
   }
   // когда не жмут границы сторон
   else {
     pageMarkup = `<li class="pagination-item"><button class="left">&#8592</button></li>
   <li class='pagination-item'><button class="btn-number">1</button></li>
-      <li class='pagination-item'><button class="#">...</button></li>
+      <li class='pagination-item'><button class="btn-number">...</button></li>
       <li class='pagination-item'><button class="btn-number">${
         length - 4
       }</button></li>
@@ -182,7 +183,7 @@ function renderMarkupFormobile(length) {
 
   if (length <= 4) {
     for (let i = 0; i < length; i += 1) {
-      pagMarkup += `<li class='pagination-item'><button class="btn-number">${
+      pageMarkup += `<li class='pagination-item'><button class="btn-number">${
         i + 1
       }</button></li>`;
     }
@@ -198,7 +199,7 @@ function renderMarkupFormobile(length) {
 
       pageMarkup += `<li class="pagination-item"><button class="right">&#8594</button></li>`;
     } else if (currentPage + 1 >= 4 && currentPage + 1 < length - 3) {
-      pageMarkup = `
+      pageMarkup = `<li class="pagination-item"><button class="left">&#8592</button></li>
       <li class='pagination-item'><button class="btn-number">${
         currentPage - 1
       }</button></li>
@@ -209,6 +210,7 @@ function renderMarkupFormobile(length) {
       <li class='pagination-item'><button class="btn-number">${
         currentPage + 2
       }</button></li>
+      <li class="pagination-item"><button class="right">&#8594</button></li>
       
       `;
     } else {
@@ -232,7 +234,6 @@ function clearMarkup() {
 
 function setActiveBtn(event) {
   const numberBtnsEl = document.querySelectorAll('button.btn-number');
-  console.log(numberBtnsEl);
 
   const btnsArray = [...numberBtnsEl];
 

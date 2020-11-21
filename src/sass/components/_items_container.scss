@@ -2,6 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   margin: -15px;
+  font-family: Roboto, sans-serif;
 }
 
 .item {
@@ -14,4 +15,33 @@
   @media screen and (min-width: $desktop) {
     width: calc((100% - 90px) / 3);
   }
+}
+
+.film-photo {
+  border-radius: 5px;
+}
+
+.film-title {
+  margin-top: 10px;
+
+  font-size: 14px;
+  line-height: 1.16;
+}
+
+.film-info {
+  margin-top: 3px;
+  font-weight: 500;
+}
+
+.film-popularity {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5px;
+  width: 36px;
+  height: 16px;
+  background-color: #ff6b08;
+  border-radius: 5px;
+  line-height: 1.16667;
+  color: #ffffff;
 }
