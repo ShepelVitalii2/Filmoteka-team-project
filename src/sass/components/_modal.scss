@@ -1,242 +1,210 @@
 .modal-container {
-    display: flex;
+  display: flex;
 
-    background-color: #ffffff;
+  background-color: #ffffff;
 
-    @media screen and (min-width: $desktop) {
-        width: $desktop;
-        padding: 60px 71px;
-    }
+  @media screen and (min-width: $desktop) {
+    width: $desktop;
+    padding: 60px 71px;
+  }
 
-    @media screen and (min-width: $tablet) and (max-width: $desktop - 1) {
-        width: $tablet;
-        padding: 60px 75px;
-    }
+  @media screen and (min-width: $tablet) and (max-width: $desktop - 1) {
+    width: $tablet;
+    padding: 60px 75px;
+  }
 
-    @media screen and (max-width: $tablet - 1) {
-        display: block;
-        width: $mobile;
-        padding: 20px 20px 40px 20px;
-    }
-}
-
-.film-poster {
-    @media screen and (min-width: $desktop) {
-        width: 426px;
-        height: 400px;
-    }
-
-    @media screen and (min-width: $tablet) and (max-width: $desktop - 1) {
-        width: 294px;
-        height: 400px;
-
-    }
-
-    @media screen and (max-width: $tablet - 1) {
-        width: 280px;
-        height: 416px;
-
-    }
-
-    background-color: aqua;
+  @media screen and (max-width: $tablet - 1) {
+    display: block;
+    width: $mobile;
+    padding: 20px 20px 40px 20px;
+  }
 }
 
 .film-info {
-    margin-left: 30px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
-    @media screen and (min-width: $desktop) {
-        width: 426px;
-    }
+  //   @media screen and (min-width: $desktop) {
+  //     width: 426px;
+  //   }
 
-    @media screen and (min-width: $tablet) and (max-width: $desktop - 1) {
-        width: 294px;
-    }
+  //   @media screen and (min-width: $tablet) and (max-width: $desktop - 1) {
+  //     width: 294px;
+  //   }
 
-    @media screen and (max-width: $tablet - 1) {
-        width: 280px;
-        margin-left: 0px;
+  //   @media screen and (max-width: $tablet - 1) {
+  //     width: 280px;
+  //     margin-left: 0px;
+  //   }
+}
+.film-title {
+  margin-top: 10px;
 
-    }
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 1.16;
+  color: $primary-text-color;
 
-    .film-title {
-        margin-bottom: 20px;
-
-        font-weight: 500;
-        font-size: 30px;
-        line-height: 1.16;
-        color: $primary-text-color;
-
-        @media screen and (max-width: $tablet - 1) {
-            margin-top: 30px;
-
-            font-size: 20px;
-            line-height: 1.15;
-        }
-    }
+  @media screen and (max-width: $tablet - 1) {
+    font-size: 20px;
+    line-height: 1.15;
+  }
 }
 
 .film-ranking {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 
-    & .item-rank {
-        display: flex;
-        margin-bottom: 10px;
+  & .item-rank {
+    display: flex;
+    margin-bottom: 10px;
+  }
+
+  & .item-rank:last-child {
+    margin-bottom: 0px;
+  }
+
+  & .item-name {
+    width: 152px;
+
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+
+    color: $grey-text-color-modal;
+
+    @media screen and (max-width: $desktop - 1) {
+      width: 108px;
     }
+  }
 
-    & .item-rank:last-child {
-        margin-bottom: 0px;
-    }
+  & .item-description {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
 
-    & .item-name {
-        width: 152px;
+    color: $primary-text-color;
+  }
 
-        font-weight: 500;
-        font-size: 12px;
-        line-height: 1.33;
+  & .item-vote {
+    display: inline-block;
+    text-align: center;
+    width: 36px;
+    height: 16px;
 
-        color: $grey-text-color-modal;
+    background: $accent-color;
+    border-radius: 5px;
 
-        @media screen and (max-width: $desktop - 1) {
-            width: 108px;
-        }
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.2;
+    color: #ffffff;
+  }
 
-    }
+  & .item-votes {
+    display: inline-block;
+    text-align: center;
+    width: 36px;
+    height: 16px;
 
-    & .item-description {
-        font-weight: 500;
-        font-size: 12px;
-        line-height: 1.33;
+    background: $white-color;
+    border-radius: 5px;
 
-        color: $primary-text-color;
-
-    }
-
-    & .item-vote {
-        display: inline-block;
-        text-align: center;
-        width: 36px;
-        height: 16px;
-
-        background: $accent-color;
-        border-radius: 5px;
-
-        font-weight: 500;
-        font-size: 12px;
-        line-height: 1.20;
-        color: #FFFFFF;
-    }
-
-    & .item-votes {
-        display: inline-block;
-        text-align: center;
-        width: 36px;
-        height: 16px;
-
-        background: $white-color;
-        border-radius: 5px;
-
-        font-size: 12px;
-        line-height: 1.20;
-        color: $primary-text-color;
-
-    }
+    font-size: 12px;
+    line-height: 1.2;
+    color: $primary-text-color;
+  }
 }
 
 .film-info .about-item {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.33;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
 
-    color: $primary-text-color;
+  color: $primary-text-color;
 }
 
 .film-info .description {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.67;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.67;
 
-    color: $primary-text-color;
+  color: $primary-text-color;
 
-    @media screen and (max-width: $tablet - 1) {
-        margin-bottom: 40px;
-
-
-    }
-
+  @media screen and (max-width: $tablet - 1) {
+    margin-bottom: 40px;
+  }
 }
 
 .btn-add {
-    width: 136px;
-    height: 44px;
-    padding: 0px;
+  width: 136px;
+  height: 44px;
+  padding: 0px;
 
-    border: 0px;
-    border-radius: 5px;
-    font-family: 'Roboto';
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.33;
+  border: 0px;
+  border-radius: 5px;
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
 
-    align-items: center;
-    text-align: center;
-    text-transform: uppercase;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
 
+  &.watched {
+    margin-right: 15px;
+    background: $accent-color;
+    color: #ffffff;
 
-    &.watched {
-        margin-right: 15px;
-        background: $accent-color;
-        color: #FFFFFF;
-
-        @media screen and (max-width: $tablet - 1) {
-            margin-right: 0px;
-        }
-
+    @media screen and (max-width: $tablet - 1) {
+      margin-right: 0px;
     }
+  }
 
-    &.queue {
-        border: 1px solid $primary-text-color;
-        box-sizing: border-box;
-    }
+  &.queue {
+    border: 1px solid $primary-text-color;
+    box-sizing: border-box;
+  }
 }
-
 
 ///////////////////Модальное окно руками
 body.show-modal .backdrop {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: initial;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
 }
 
 body.show-modal .modal {
-    transform: scale(1);
+  transform: scale(1);
 }
 
 .backdrop {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.3);
-    z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 999;
 
-    pointer-events: none;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
 }
 
 .modal {
-    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
-        0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
 
-    transform: scale(1.1);
-    transition: transform 200ms ease-in-out;
+  transform: scale(1.1);
+  transition: transform 200ms ease-in-out;
 }

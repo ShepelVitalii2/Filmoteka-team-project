@@ -5,40 +5,37 @@ body {
 }
 
 .container {
-  max-width: 100%;
+  // max-width: 100%;
   margin-left: auto;
   margin-right: auto;
 
-  @media screen and (min-width: $mobile) {
-    width: 280px;
-    padding-left: 20px;
-    padding-right: 20px;
+  @media screen and (max-width: $tablet - 1px) {
+    max-width: $mobile;
+    padding: 20px;
   }
-  @media screen and (min-width: $tablet) {
-    width: 618px;
-    padding-left: 75px;
-    padding-right: 75px;
+  @media screen and (min-width: $tablet) and (max-width: $desktop - 1px) {
+    max-width: $tablet;
+    padding: 60px 75px;
   }
   @media screen and (min-width: $desktop) {
-    width: 882px;
-    padding-left: 71px;
-    padding-right: 71px;
+    max-width: $desktop;
+    padding: 60px 71px;
   }
 }
 
-.section {
-  padding-top: 20px;
-  padding-bottom: 20px;
+// .section {
+//   padding-top: 20px;
+//   padding-bottom: 20px;
 
-  @media screen and (min-width: $tablet) {
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
-  @media screen and (min-width: $desktop) {
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
-}
+//   @media screen and (min-width: $tablet) {
+//     padding-top: 60px;
+//     padding-bottom: 60px;
+//   }
+//   @media screen and (min-width: $desktop) {
+//     padding-top: 60px;
+//     padding-bottom: 60px;
+//   }
+// }
 
 h2 {
   margin: 0;
