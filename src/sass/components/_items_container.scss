@@ -1,32 +1,17 @@
 .container-item {
   display: flex;
   flex-wrap: wrap;
+  margin: -15px;
 }
 
-@media screen and (max-width: 767px) {
-  .item {
-    margin-bottom: 30px;
-  }
-}
+.item {
+  margin: 15px;
 
-@media screen and (min-width: 768px) and (max-width: 1199px) {
-  .item {
+  @media screen and (min-width: $tablet) and (max-width: $desktop - 1px) {
     width: calc((100% - 60px) / 2);
-    margin-right: 30px;
-    margin-bottom: 30px;
   }
-  .item:nth-child(2n) {
-    margin-right: 0px;
-  }
-}
 
-@media screen and (min-width: 1200px) {
-  .item {
-    width: calc((100% - 60px) / 3);
-    margin-right: 30px;
-    margin-bottom: 30px;
-  }
-  .item:nth-child(3n) {
-    margin-right: 0px;
+  @media screen and (min-width: $desktop) {
+    width: calc((100% - 90px) / 3);
   }
 }
