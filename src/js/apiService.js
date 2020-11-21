@@ -72,11 +72,6 @@ export default class ApiService {
 
   fetchTopWeekMovie() {
     return fetch(`${BASE_URL}/trending/movie/week?api_key=${API_KEY}`);
-    // .then(result => result.json())
-    // .then(({ results }) => {
-    //   //console.log(results);
-    //   return results;
-    // });
   }
 }
 

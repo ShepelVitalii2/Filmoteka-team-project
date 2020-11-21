@@ -58,12 +58,6 @@ function onAddWatch(e) {
   console.log('ADD WATCH');
 }
 
-//Картинка не идет, так как нету пути, в src в handlebars укажи путь картинки. Пример выше - list-search-film. Будут вопросы, пиши
-//пример
-// <img src="{{webformatURL}}" data-source={{адрес картинки которую нужно запостить, когда открыта модалка}} alt="{{tags}}" />
-//вроде так
-
-
 //Функция кнопки AddQueue
 function onAddQueue(e) {
   console.log('ADD QUEUE');
@@ -72,4 +66,3 @@ function onAddQueue(e) {
 // onOpenModal(fetchMovieFullInfo(2));
 
 export { onOpenModal };
-
