@@ -1,4 +1,4 @@
-<header class="page-header">
+<header class="page-header library">
   <div class="container">
     <div class="header-up">
       <!-- логотип ссылка -->
@@ -10,27 +10,28 @@
       <nav>
         <ul class="nav-list">
           <li class="nav-item">
-            <a href="./index.html" class="nav-btn link"> HOME </a>
+            <a href="./index.html" class="nav-btn btn-home link"> HOME </a>
           </li>
           <li class="nav-item">
-            <a href="./library.html" class="nav-btn link"> MY LIBRARY </a>
-            <!-- навигация по страницам -->
+            <a href="#" class="nav-btn is-active-btn link"> MY LIBRARY </a>
           </li>
         </ul>
       </nav>
     </div>
 
-    <ul>
-      <li class="button-item">
-        <button class="lib-watched">WATCHED</button>
-      </li>
-      <li class="button-item">
-        <button class="lib-queue">QUEUE</button>
-      </li>
-    </ul>
+    <div class="header-down">
+      <ul class="button-list">
+        <li class="button-item">
+          <button class="btn lib-btn-active">WATCHED</button>
+        </li>
+        <li class="button-item">
+          <button class="btn lib-btn-off queue">QUEUE</button>
+        </li>
+      </ul>
+    </div>
   </div>
-  <div class="header-down">
+  <!-- <div class="header-down">
     <input type="text" placeholder="Поиск фильмов" class="input-search" />
     <img src="./images/search-header.svg" alt="search" />
-  </div>
+  </div> -->
 </header>
