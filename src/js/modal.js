@@ -7,6 +7,8 @@ const backdrop = document.querySelector('.js-backdrop');
 const modalEl = document.querySelector('.modal');
 let btnAddWatch;
 let btnAddQueue;
+let currentFilm;
+let currentFilmId;
 
 //Слушатели событий
 // filmContainerEl.addEventListener('click', onOpenModal);
@@ -24,6 +26,8 @@ function onOpenModal(film) {
 
   btnAddQueue = document.querySelector('.queue');
   btnAddQueue.addEventListener('click', onAddQueue);
+  currentFilm = film;
+  currentFilmId = film.id;
 }
 
 //Функция закрытия модалки
@@ -54,22 +58,26 @@ function onEscKeyPress(event) {
 }
 
 //Функция кнопки AddWatch
-function onAddWatch(e) {
-  console.log('ADD WATCH');
+function onAddWatch() {
+  let arr = JSON.parse(localStorage.getItem('FilmToWatch')) || [];
+  const allAvailable = arr.every(film => film.id !== currentFilmId);
+
+  if (allAvailable) {
+    arr.push(currentFilm);
+    localStorage.setItem('FilmToWatch', JSON.stringify(arr));
+  }
 }
-
-//Картинка не идет, так как нету пути, в src в handlebars укажи путь картинки. Пример выше - list-search-film. Будут вопросы, пиши
-//пример
-// <img src="{{webformatURL}}" data-source={{адрес картинки которую нужно запостить, когда открыта модалка}} alt="{{tags}}" />
-//вроде так
-
 
 //Функция кнопки AddQueue
-function onAddQueue(e) {
-  console.log('ADD QUEUE');
+function onAddQueue() {
+  let arr = JSON.parse(localStorage.getItem('FilmToQueue')) || [];
+  const allAvailable = arr.every(film => film.id !== currentFilmId);
+
+  if (allAvailable) {
+    arr.push(currentFilm);
+    localStorage.setItem('FilmToQueue', JSON.stringify(arr));
+  }
 }
 
-// onOpenModal(fetchMovieFullInfo(2));
-
-export { onOpenModal };
-
+export { onOpenModal, onAddWatch, onAddQueue };
+// localStorage.clear();
