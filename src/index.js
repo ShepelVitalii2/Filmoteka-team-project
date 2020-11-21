@@ -14,10 +14,7 @@ import './js/seach-film';
 //import './js/modal';
 import './js/open-modal';
 
-<<<<<<< Updated upstream
 import { onOpenModal } from './js/modal';
-=======
->>>>>>> Stashed changes
 
 import './js/spinner';
 
