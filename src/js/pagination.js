@@ -1,5 +1,3 @@
-console.log('123');
-
 // import Pagination from 'tui-pagination';
 // import 'tui-pagination/dist/tui-pagination.css';
 import markupFilms from './popularFilmsLoad';
@@ -74,7 +72,15 @@ function onBtnClick(event) {
       setTimeout(() => {
         setActiveBtn(event);
       }, 500),
-    );
+    )
+    .then(goTop);
+}
+
+function goTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
 }
 
 function onNumberBtnClick(event) {
@@ -114,14 +120,14 @@ function renderMarkup(length) {
   //если разметка меньше 5
   if (currentPage + 1 < 5) {
     pageMarkup =
-      '<li class="pagination-item"><button class="#">&#8592</button></li>';
+      '<li class="pagination-item"><button class="left">&#8592</button></li>';
 
     for (let i = 1; i <= 5; i += 1) {
       const pageItem = `<li class="pagination-item"><button class="btn-number">${i}</button></li>`;
       pageMarkup += pageItem;
     }
     pageMarkup += `<li class="pagination-item"><button class="#">...</button></li>
-  <li class="pagination-item"><button class="btn-number">${length}</button></li>
+  <li class="pagination-item"><button class="btn-number-last">${length}</button></li>
   <li class="pagination-item"><button class="#">&#8594</button></li>`;
   }
   //если разметка больше 5 и до последнего элемента остается 3 стр
@@ -142,12 +148,12 @@ function renderMarkup(length) {
       currentPage + 3
     }</button></li>
     <li class='pagination-item'><button class="#">...</button></li>
-    <li class="pagination-item"><button class="btn-number">${length}</button></li>
-    <li class="pagination-item"><button class="#">&#8594</button></li>`;
+    <li class="pagination-item"><button class="btn-number-last">${length}</button></li>
+    <li class="pagination-item"><button class="right">&#8594</button></li>`;
   }
   // когда не жмут границы сторон
   else {
-    pageMarkup = `<li class="pagination-item"><button class="#">&#8592</button></li>
+    pageMarkup = `<li class="pagination-item"><button class="left">&#8592</button></li>
   <li class='pagination-item'><button class="btn-number">1</button></li>
       <li class='pagination-item'><button class="#">...</button></li>
       <li class='pagination-item'><button class="btn-number">${
@@ -163,7 +169,7 @@ function renderMarkup(length) {
         length - 1
       }</button></li>
       <li class='pagination-item'><button class="btn-number">${length}</button></li>
-      <li class="pagination-item"><button class="#">&#8594</button></li>`;
+      <li class="pagination-item"><button class="right">&#8594</button></li>`;
   }
 }
 
@@ -171,20 +177,10 @@ function clearMarkup() {
   paginationEl.innerHTML = '';
 }
 
-function onRightBtnClick() {
-  currentPage += 1;
-}
-
-function onLeftBtnClick() {
-  currentPage -= 1;
-}
-
-function clearFilmContainer() {
-  refs.filmContainer.innerHTML = '';
-}
-
 function setActiveBtn(event) {
-  const numberBtnsEl = document.querySelectorAll('button.button-number');
+  const numberBtnsEl = document.querySelectorAll('pagination-item');
+  console.log(numberBtnsEl);
+  numberBtnsEl.classList.add('active-pagination');
   const btnsArray = [...numberBtnsEl];
 
   if (currentPage === 0) {
@@ -211,4 +207,17 @@ function setActiveBtn(event) {
     });
   }
 }
+
+function onRightBtnClick() {
+  currentPage += 1;
+}
+
+function onLeftBtnClick() {
+  currentPage -= 1;
+}
+
+function clearFilmContainer() {
+  refs.filmContainer.innerHTML = '';
+}
+
 // const pagination = new Pagination('pagination', options);
