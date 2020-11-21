@@ -2,6 +2,7 @@
   display: flex;
 
   background-color: #ffffff;
+  border-radius: 7px;
 
   @media screen and (min-width: $desktop) {
     width: $desktop;
@@ -20,26 +21,45 @@
   }
 }
 
-.film-info {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.modal-container .film-poster img {
+  @media screen and (min-width: $desktop) {
+    max-width: 426px;
+    max-height: 516px;
+  }
 
-  //   @media screen and (min-width: $desktop) {
-  //     width: 426px;
-  //   }
+  @media screen and (min-width: $tablet) and (max-width: $desktop - 1) {
+    max-width: 294px;
+    max-height: 416px;
+  }
 
-  //   @media screen and (min-width: $tablet) and (max-width: $desktop - 1) {
-  //     width: 294px;
-  //   }
+  @media screen and (max-width: $tablet - 1) {
+    max-width: 280px;
+    max-height: 416px;
+  }
 
-  //   @media screen and (max-width: $tablet - 1) {
-  //     width: 280px;
-  //     margin-left: 0px;
-  //   }
 }
-.film-title {
-  margin-top: 10px;
+
+.modal-container .film-info {
+
+  @media screen and (min-width: $desktop) {
+    // width: 426px;
+    margin-left: 30px;
+  }
+
+  @media screen and (min-width: $tablet) and (max-width: $desktop - 1) {
+    // width: 294px;
+    margin-left: 30px;
+  }
+
+  @media screen and (max-width: $tablet - 1) {
+    // width: 280px;
+    margin-top: 30px;
+    margin-left: 0px;
+  }
+}
+
+.modal-container .film-title {
+  margin-bottom: 20px;
 
   font-weight: 500;
   font-size: 30px;
@@ -52,7 +72,7 @@
   }
 }
 
-.film-ranking {
+.modal-container .film-ranking {
   margin-bottom: 20px;
 
   & .item-rank {
@@ -76,14 +96,34 @@
     @media screen and (max-width: $desktop - 1) {
       width: 108px;
     }
+
+
   }
 
   & .item-description {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 274px;
+
     font-weight: 500;
     font-size: 12px;
     line-height: 1.33;
 
     color: $primary-text-color;
+
+    @media screen and (min-width: $tablet) and (max-width: $desktop - 1) {
+      max-width: 189px;
+    }
+
+    @media screen and (max-width: $tablet - 1) {
+      max-width: 171px;
+    }
+
+
+  }
+
+  & .item-description li {
+    margin-right: 10px;
   }
 
   & .item-vote {
@@ -91,6 +131,7 @@
     text-align: center;
     width: 36px;
     height: 16px;
+    margin-right: 3px;
 
     background: $accent-color;
     border-radius: 5px;
@@ -106,6 +147,7 @@
     text-align: center;
     width: 36px;
     height: 16px;
+    margin-left: 3px;
 
     background: $white-color;
     border-radius: 5px;
@@ -116,7 +158,7 @@
   }
 }
 
-.film-info .about-item {
+.modal-container .film-info .about-item {
   margin-bottom: 10px;
 
   font-weight: 500;
@@ -126,7 +168,7 @@
   color: $primary-text-color;
 }
 
-.film-info .description {
+.modal-container .film-info .description {
   margin-bottom: 20px;
 
   font-weight: 500;
@@ -140,7 +182,7 @@
   }
 }
 
-.btn-add {
+.modal-container .btn-add {
   width: 136px;
   height: 44px;
   padding: 0px;
@@ -173,6 +215,10 @@
 }
 
 ///////////////////Модальное окно руками
+body.show-modal {
+  overflow: hidden;
+}
+
 body.show-modal .backdrop {
   opacity: 1;
   visibility: visible;
