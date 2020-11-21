@@ -1,0 +1,38 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+
+  & > li:not(:last-child) {
+    margin-right: 16px;
+  }
+
+  //   & left {
+  //     background: #f7f7f7;
+  //   }
+
+  & button {
+    min-width: 40px;
+    height: 40px;
+
+    background: #f7f7f7;
+    border-radius: 5px;
+    border: none;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+    cursor: pointer;
+    outline: none;
+    & button-number {
+      min-width: 5px;
+
+      background: #ffffff;
+    }
+    & active-pagination {
+      min-width: 40px;
+
+      background: #ff6b08;
+      border-radius: 5px;
+      color: #ffffff;
+    }
+  }
+}
