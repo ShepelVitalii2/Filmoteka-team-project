@@ -2,14 +2,14 @@
 import modalCardTpl from '../templates/modal-card.hbs';
 
 //DOM элементы
-const filmContainerEl = document.querySelector('.film-container');
+const filmContainerEl = document.querySelector('.js-film-container');
 const backdrop = document.querySelector('.js-backdrop');
 const modalEl = document.querySelector('.modal');
 let btnAddWatch;
 let btnAddQueue;
 
 //Слушатели событий
-filmContainerEl.addEventListener('click', onOpenModal);
+// filmContainerEl.addEventListener('click', onOpenModal);
 backdrop.addEventListener('click', onBackdropClick);
 
 //Функция открытия модалки
