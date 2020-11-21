@@ -3,7 +3,7 @@
   justify-content: center;
   margin-bottom: 60px;
 
-  & > li:not(:last-child) {
+  &>li:not(:last-child) {
     margin-right: 16px;
   }
 
@@ -23,17 +23,20 @@
     line-height: 1.33;
     cursor: pointer;
     outline: none;
-    & button-number {
+
+    & .button-number {
       min-width: 5px;
 
       background: #ffffff;
     }
-    & active-pagination {
-      min-width: 40px;
 
-      background: #ff6b08;
-      border-radius: 5px;
-      color: #ffffff;
-    }
   }
+}
+
+.pagination-item .active-pagination {
+  min-width: 40px;
+
+  background-color: #ff6b08;
+  border-radius: 5px;
+  color: #ffffff;
 }
