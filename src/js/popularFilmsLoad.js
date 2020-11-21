@@ -1,7 +1,7 @@
 import topWeekMovie from '../templates/movieItemTpl.hbs';
 import ApiService from './apiService';
 //import * as ApiService from './apiService';
-// import loadingSpinner from './spinner';
+import loadingSpinner from './spinner';
 import movieItemTpl from '../templates/movieItemTpl';
 
 const refs = {
@@ -15,8 +15,11 @@ export default function markupFilms(films) {
 }
 
 function showBestFilms(url) {
-  // loadingSpinner();
-  return filmsApiService.resultFetchFilms(url).then(markupFilms);
+  loadingSpinner();
+  return filmsApiService
+    .resultFetchFilms(url)
+    .then(markupFilms)
+    .then(loadingSpinner);
 }
 
 showBestFilms('trending/movie/day');

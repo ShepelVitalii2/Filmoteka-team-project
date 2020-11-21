@@ -11,6 +11,7 @@ const refs = {
 
 let pageMarkup = '';
 let currentPage = 0;
+const mediaQuery = window.matchMedia('(max-width: 767px)');
 const paginationEl = document.querySelector('.pagination');
 
 // const pagination = new Pagination('pagination');
@@ -33,7 +34,12 @@ function fetchPage(page) {
 
 //делаем разметку
 function paginationMarkup(length) {
-  renderMarkup(length);
+  if (mediaQuery.matches) {
+    renderMarkupFormobile(length);
+  } else {
+    renderMarkupForDesk(length);
+  }
+
   paginationEl.insertAdjacentHTML('beforeend', pageMarkup);
 }
 
@@ -115,9 +121,7 @@ const options = {
   },
 };
 
-//рендеринг разметки
-function renderMarkup(length) {
-  //если разметка меньше 5
+function renderMarkupForDesk(length) {
   if (currentPage + 1 < 5) {
     pageMarkup =
       '<li class="pagination-item"><button class="left">&#8592</button></li>';
@@ -173,14 +177,63 @@ function renderMarkup(length) {
   }
 }
 
+function renderMarkupFormobile(length) {
+  pageMarkup = '';
+
+  if (length <= 4) {
+    for (let i = 0; i < length; i += 1) {
+      pagMarkup += `<li class='pagination-item'><button class="btn-number">${
+        i + 1
+      }</button></li>`;
+    }
+  } else {
+    if (currentPage + 1 < 4) {
+      pageMarkup =
+        '<li class="pagination-item"><button class="left">&#8592</button></li>';
+
+      for (let i = 1; i <= 4; i += 1) {
+        const pagItem = `<li class='pagination-item'><button class="btn-number">${i}</button></li>`;
+        pageMarkup += pagItem;
+      }
+
+      pageMarkup += `<li class="pagination-item"><button class="right">&#8594</button></li>`;
+    } else if (currentPage + 1 >= 4 && currentPage + 1 < length - 3) {
+      pageMarkup = `
+      <li class='pagination-item'><button class="btn-number">${
+        currentPage - 1
+      }</button></li>
+      <li class='pagination-item'><button class="btn-number">${currentPage}</button></li>
+      <li class='pagination-item'><button class="btn-number">${
+        currentPage + 1
+      }</button></li>
+      <li class='pagination-item'><button class="btn-number">${
+        currentPage + 2
+      }</button></li>
+      
+      `;
+    } else {
+      pageMarkup = `
+     
+      <li class='pagination-item'><button class="btn-number">${
+        length - 2
+      }</button></li>
+      <li class='pagination-item'><button class="btn-number">${
+        length - 1
+      }</button></li>
+      <li class='pagination-item'><button class="btn-number">${length}</button></li>
+      `;
+    }
+  }
+}
+
 function clearMarkup() {
   paginationEl.innerHTML = '';
 }
 
 function setActiveBtn(event) {
-  const numberBtnsEl = document.querySelectorAll('pagination-item');
+  const numberBtnsEl = document.querySelectorAll('button.btn-number');
   console.log(numberBtnsEl);
-  numberBtnsEl.classList.add('active-pagination');
+
   const btnsArray = [...numberBtnsEl];
 
   if (currentPage === 0) {
