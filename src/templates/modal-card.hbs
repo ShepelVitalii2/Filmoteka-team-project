@@ -24,7 +24,12 @@
             </li>
             <li class="item-rank">
                 <p class="item-name">Genre</p>
-                <p class="item-description">{{genres.name }}</p>
+                {{!-- <p class="item-description">{{genres.name }}</p> --}}
+                <ul class="item-description">
+                    {{#each genres}}
+                    <li class="tag-list__item">{{this.name}}</li>
+                    {{/each}}
+                </ul>
             </li>
 
         </ul>
