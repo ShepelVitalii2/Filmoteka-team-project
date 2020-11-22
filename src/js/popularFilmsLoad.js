@@ -1,8 +1,6 @@
 import topWeekMovie from '../templates/movieItemTpl.hbs';
 import ApiService from './apiService';
-//import * as ApiService from './apiService';
 import loadingSpinner from './spinner';
-import movieItemTpl from '../templates/movieItemTpl';
 
 const refs = {
   filmContainer: document.querySelector('.js-film-container'),
@@ -23,11 +21,3 @@ function showBestFilms(url) {
 }
 
 showBestFilms('trending/movie/day');
-
-// refs.filmContainer.addEventListener('click', checkClick);
-
-// function checkClick(evt) {
-//   if (evt.target.tagName === 'IMG') {
-//     startTest(evt.target.dataset.id);
-//   }
-// }
