@@ -36,11 +36,9 @@
     max-width: 280px;
     max-height: 416px;
   }
-
 }
 
 .modal-container .film-info {
-
   @media screen and (min-width: $desktop) {
     // width: 426px;
     margin-left: 30px;
@@ -96,8 +94,6 @@
     @media screen and (max-width: $desktop - 1) {
       width: 108px;
     }
-
-
   }
 
   & .item-description {
@@ -118,8 +114,6 @@
     @media screen and (max-width: $tablet - 1) {
       max-width: 171px;
     }
-
-
   }
 
   & .item-description li {
@@ -230,12 +224,14 @@ body.show-modal .modal {
 }
 
 .backdrop {
+  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
   top: 0;
   left: 0;
+  overflow: scroll;
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.3);
@@ -248,6 +244,13 @@ body.show-modal .modal {
 }
 
 .modal {
+  @media screen and (max-width: $desktop) {
+    position: relative;
+    position: absolute;
+    top: 0%;
+  }
+
+  // transform: translate(-50%, -50%) scale(0.8);
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
 
