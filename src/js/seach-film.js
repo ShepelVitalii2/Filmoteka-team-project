@@ -1,5 +1,5 @@
 
-import filmListTempl from '../templates/list-seach-film.hbs';
+import filmListTempl from '../templates/movieItemTpl.hbs';
 const debounce = require('lodash.debounce');
 
 const refs = {
