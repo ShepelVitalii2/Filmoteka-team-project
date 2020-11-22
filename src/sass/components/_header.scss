@@ -1,16 +1,23 @@
 .page-header {
+  min-height: 230px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 320px;
+  background-color: #000000;
   background-image: linear-gradient(
       to right,
       rgba(0, 0, 0, 0.56) 100%,
       rgba(0, 0, 0, 0.56) 100%
     ),
     url('/images/home-header-br-img-320.jpg');
-  // background-color: black;
-  min-height: 230px;
+
+  background-position: center;
   background-repeat: no-repeat;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 320px;
+  background-size: cover;
+
+  .container-had {
+    padding: 48px 20px;
+  }
 
   @media screen and (min-width: 768px) {
     background-image: linear-gradient(
@@ -19,12 +26,16 @@
         rgba(0, 0, 0, 0.56) 100%
       ),
       url('/images/home-header-br-img-768.jpg');
-    max-width: 768px;
-    display: flex;
-    justify-content: center;
 
-    .logo-txt {
-      display: block;
+    max-width: 768px;
+    // display: flex;
+    // justify-content: center;
+
+    // .logo-txt {
+    //   display: block;
+    // }
+    .container-had {
+      padding: 48px 73px;
     }
 
     .header-down {
@@ -41,8 +52,11 @@
       url('/images/home-header-br-img-1024.jpg');
     max-width: 1024px;
 
-    .logo-txt {
-      display: block;
+    // .logo-txt {
+    //   display: block;
+    // }
+    .container-lib {
+      padding: 48px 73px;
     }
 
     .header-down {
@@ -50,15 +64,11 @@
     }
   }
 
-  // .container {
-  //   padding-left: 71px;
-  //   padding-right: 71px;
-  // }
-
   .header-up {
     display: flex;
     justify-content: space-between;
-    padding-top: 41px;
+    align-items: flex-start;
+    // padding-top: 41px;
     margin-bottom: 37px;
   }
   .nav-list {
@@ -67,15 +77,19 @@
 
   .logo {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
   }
 
   .logo-txt {
-    display: none;
     font-size: 30px;
     font-weight: 500;
     color: #ffffff;
     margin-left: 12px;
+  }
+  @media screen and (max-width: 767px) {
+    .logo-txt {
+      display: none;
+    }
   }
 
   .nav-list {
@@ -102,11 +116,14 @@
     display: block;
     content: '';
     height: 3px;
-    background-color: red;
+    background-color: #ff6b08;
   }
 
   .btn-my-library {
     margin-left: 39px;
+  }
+  .btn-home {
+    margin-right: 39px;
   }
 
   .header-down {
